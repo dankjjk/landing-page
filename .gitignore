@@ -1,5 +1,5 @@
+.idea/
 build
-app/libs
 terminal.glue
 node_modules
 npm-debug.log

@@ -1,0 +1,32 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "* Нужно убедиться что установлен node и npm.",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "browser-sync": "^2.23.6",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp.spritesmith": "^6.9.0",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-update": "0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dankjjk/landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dankjjk/landing-page/issues"
+  },
+  "homepage": "https://github.com/dankjjk/landing-page#readme"
+}
