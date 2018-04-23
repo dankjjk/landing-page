@@ -1,0 +1,54 @@
+.info {
+	margin: 50px 0;
+	.about {
+		text-align: center;
+		margin: 0;
+		&__content {
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+			flex-wrap: wrap;
+			margin: auto;
+			width: 980px;
+			.items {
+				border: 1px solid #e2e2e2;
+				border-radius: 3px;
+				flex-basis: 300px;
+				margin: 10px;
+				padding: 20px;
+				text-align: center;
+
+				img {
+					height: 200px;
+				}
+
+				.button {
+					font-family: $ff-main, sans-serif;
+					padding: 10px 25px;
+				}
+			}
+		}
+
+		.title {
+			font-family: $ff-main-light;
+			font-size: 2.2rem;
+		}
+
+		.info__text {
+			padding: 25px 0;
+			width: 980px;
+			margin: auto;
+		}
+
+		.name {
+			font-family: $ff-main-light;
+		}
+
+		.about__worker {
+			display: block;
+			margin: 25px 0;
+			font-size: 13px;
+			text-align: justify;
+		}
+	}
+}
