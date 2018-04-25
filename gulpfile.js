@@ -27,7 +27,7 @@ gulp.task('server', function() {
 /* --------------- Pug compile --------------- */
 
 gulp.task('templates:compile', function buildHTML() {
-  return gulp.src('app/template/**/*.pug')
+  return gulp.src('app/template/*.pug')
   .pipe(pug({
     pretty: true
   }))
@@ -50,12 +50,13 @@ gulp.task('sass:compile', function () {
     .pipe(gulp.dest('./build/css/'));
 });
 
+
 /* --------------- Sprite --------------- */
 
 gulp.task('sprite', function (cb) {
   var spriteData = gulp.src('app/img/icons/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
-    imgPath: 'app/img/sprite.png',
+    imgPath: '../img/sprite.png',
     cssName: 'sprite.scss'
   }));
 
@@ -87,21 +88,18 @@ gulp.task('copy:images', function() {
 		.pipe(gulp.dest('build/img'));
 });
 
+
+/* --------------- Copy js --------------- */
+
 gulp.task('copy:js', function() {
 	return gulp.src('app/js/**/*.js')
 		.pipe(gulp.dest('build/js'));
 });
 
-/* --------------- Copy images --------------- */
-
-gulp.task('copy:css', function() {
-	return gulp.src('app/css/swiper.min.css')
-		.pipe(gulp.dest('build/css'))
-})
 
 /* --------------- Copy --------------- */
 
-gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js', 'copy:css'));
+gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js'));
 
 
 /* --------------- Watchers --------------- */
