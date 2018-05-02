@@ -1,9 +1,12 @@
 .idea/
 build
-terminal.glue
 node_modules
 npm-debug.log
 .DS_Store
+### Windows template
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
 
 # Windows thumbnail cache files
 Thumbs.db
