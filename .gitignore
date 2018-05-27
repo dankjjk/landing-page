@@ -1,9 +1,9 @@
 .idea/
-build
 node_modules
 package-lock.json
 npm-debug.log
 .DS_Store
+terminal.glue
 ### Windows template
 # Windows image file caches
 Thumbs.db
