@@ -1,0 +1,61 @@
+.work {
+	padding: 90px 0;
+	background-color: #de2b24;
+	color: #fff;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.title--with-bottom-line {
+		&:after {
+			background: #fff;
+		}
+	}
+
+	&__item {
+		width: 256px;
+		height: 255px;
+		font-weight: bold;
+		color: #fff;
+		background: #f35e59;
+
+		&--name {
+			position: relative;
+			padding: 75px 40px;
+			text-align: center;
+		}
+	}
+	
+	&__name {
+		font-size: 1.625rem;
+	}
+	
+	&__description {
+		font-size: 1rem;
+	}
+
+	&__picture {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.fa-telegram-plane {
+	font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+

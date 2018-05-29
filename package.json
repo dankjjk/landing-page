@@ -22,7 +22,7 @@
   "author": "Alexander",
   "license": "ISC",
   "dependencies": {
-    "font-awesome": "^4.7.0",
+    "@fortawesome/fontawesome": "^1.1.8",
     "gulp-update": "0.0.2",
     "jquery": "^3.3.1",
     "normalize.scss": "^0.1.0",
