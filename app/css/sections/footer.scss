@@ -1,46 +1,90 @@
 .footer {
-	border-top: 1px solid silver;
-	&__content{
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		align-content: center;
+	&__top {
+		padding: 88px 0 83px;
+		text-align: center;
+		background: #2a2a2a;
+	}
 
-		.logo img {
-			cursor: pointer;
-			height: 70px;
+	&__bottom {
+		padding: 26px;
+		text-align: center;
+		background: #515151;
+	}
+
+	&__title {
+		margin-bottom: 35px;
+		font-size: 1.8125rem;
+		color: #fff;
+		font-family: #ff-main-bold;
+	}
+
+	&__links {
+		margin-bottom: 35px;
+		color: #fff;
+
+		.fab {
+			color: #fff;
 		}
+	}
 
-		&__nav {
-			display: inline-block;
-			vertical-align: top;
-			padding: 10px;
+	&__social {
+		margin-left: 20px;
+		padding: 15px;
+		border: 1px solid #515151;
+		border-radius: 2px;
+
+		&:hover {
+			border: 1px solid #de2b24;
 		}
-
-		.nav {
-			padding: 10px;
-			a {
-				color: $main-black;
-				display: inline-block;
-				padding: 15px;
-				transition: .3s;
-
-				&:hover {
-					color: #2E8AE0;
-				}
-			}
+		
+		&:first-child {
+			margin-left: 0;
 		}
+	}
 
-		input {
-			cursor: pointer;
-			border: 1px solid silver;
-			height: 40px;
-			padding: 5px 15px;
-			margin-top: 10px;
+	&__text {
+		margin-bottom: 30px;
+		font-size: 0.875rem;
+		color: #cecece;
+	}
 
-			&:hover {
-				border-color: #2E8AE0;
-			}
+	&__field {
+		width: 67%;
+		margin: 0 auto 27px;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 20px;
+		font-size: 0.875rem;
+		color: #cecece;
+		background: #515151;
+		border: 0;
+	}
+
+	.button {
+		border: 2px solid #515151;
+		padding: 15px 37px;
+		box-sizing: border-box;
+		font-size: 1.0625rem;
+		font-family: $ff-main-bold;
+		background-color: initial;
+		color: #fff;
+
+		&:hover {
+			border: 2px solid #de2b24;
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

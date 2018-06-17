@@ -1,10 +1,18 @@
-﻿section.footer
-	.container
-		.footer__content
-			.logo: img(src="img/logo.gif")
-			.nav
-				a(href="#") Home
-				a(href="#") About Us
-				a(href="#") Our Work
-				a(href="#") Contacts
-			input(type="search" placeholder="Search...")
+- var linkItems = ['facebook', 'twitter', 'google', 'linkedin']
+- var linkUrls = ['facebook.com', 'twitter.com', 'google.com', 'linkedin.com']
+footer.footer
+	.footer__top
+		.container
+			.footer__title Get in touch
+			.footer__links
+				each item, key in linkItems
+					a(href="http://" + linkUrls[key] target="_blank" class="footer__social")
+						i(class="fab fa-" + item aria-hidden="true")
+							span.visually-hidden=linkItems
+			.footer__text Subcribe to our newsletters to stay update
+			form(action="#" method="post")
+				.footer__field: input.footer__input(type="email" placeholder="Email Address")
+				button(type="submit").button Subcribe
+
+	.footer__bottom
+		.footer__copy Cssauthor.com &copy; 2014 All Rights Reserved
