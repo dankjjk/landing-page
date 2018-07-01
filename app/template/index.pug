@@ -4,23 +4,21 @@ html(lang='ru')
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(content='width=device-width, initial-scale=1.0' name='viewport')
-		link(rel="stylesheet" href="css/swiper.min.css")
 		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous")
 		link(rel='stylesheet' href='css/main.min.css')
 		title Web-site
 
-
 	body
-		include sections/header
-		include sections/hero
-		include sections/about
-		include sections/approach
-		include sections/work
-		include sections/form
-		include sections/footer
+		.wrapper
+			include sections/header
+			include sections/hero
+			include sections/about
+			include sections/approach
+			include sections/work
+			include sections/form
+			include sections/footer
 
-		
-		script(src='js/jquery.min.js')
+		script(src="js/jquery.min.js")
 		script(src='js/main.js')
 
 

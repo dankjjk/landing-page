@@ -1,14 +1,24 @@
 ﻿header.header
 	.container
 		.header__menu
+			.header__burger
+				#burger
+					.bar.topBar
+					.bar.btmBar
+			.header__icon
+
 			.header__logo
 				img.logo__picture(src="img/logo.png" alt="logotype")
 
-			nav.nav
-				a.nav__link.nav__link--active(href="#") Home
-				a.nav__link.nav__link(href="#") About us
-				a.nav__link.nav__link(href="#") Our work
-				a.nav__link.nav__link(href="#") Contacts
+			ul.nav
+				li.nav__link.nav__link--active(href="#")
+					a.nav__name Home
+				li.nav__link.nav__link(href="#")
+					a.nav__name About us
+				li.nav__link.nav__link(href="#")
+					a.nav__name Our work
+				li.nav__link.nav__link(href="#")
+					a.nav__name Contacts
 
 			.header__button
 				a.button.button__red(href="#") Free Consultation

@@ -1,4 +1,5 @@
 ﻿.header {
+	background: #fff;
 
 	&__menu {
 		display: flex;
@@ -7,8 +8,176 @@
 		align-content: center;
 
 		@media (max-width: 992px) {
-			flex-direction: column;
-			align-items: center;
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			height: 50px;
+			width: 100%;
+			background: rgba(#000, 0.8);
+			overflow: hidden;
+			transition: all 0.5s ease-out, background 1s ease-out;
+			transition-delay: .2s;
+			z-index: 1;
+		}
+	}
+
+	&__burger {
+		display: none;
+
+		@media (max-width: 992px) {
+			position: relative;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			cursor: pointer;
+			transform: rotate(0deg);
+			transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+			user-select: none;
+		}
+	}
+
+	#burger {
+		@media (max-width: 992px) {
+			width: 18px;
+			height: 8px;
+			position: relative;
+			display: block;
+			margin: -4px auto 0;
+			top: 50%;
+
+			.bar {
+				width: 100%;
+				height: 1px;
+				display: block;
+				position: relative;
+				background: #fff;
+				transition: all .3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+				transition-delay: 0s;
+
+				&.topBar {
+					transform: translateY(0px) rotate(0deg);
+				}
+
+				&.btmBar {
+					transform: translateY(6px) rotate(0deg);
+				}
+			}
+		}
+	}
+
+	// &__icon {
+	// 	@media (max-width: 992px) {
+	// 		display: inline-block;
+	// 		position: absolute;
+	// 		width: 50px;
+	// 		height: 50px;
+	// 		text-align: center;
+	// 		left: 50%;
+	// 		transform: translateX(-50%);
+	// 	}
+	// }
+
+	.nav {
+		display: inline-block;
+		vertical-align: top;
+		padding: 10px;
+		margin: 0;
+
+		@media (max-width: 992px) {
+			position: relative;
+			display: block;
+			padding: 0px 48px 0;
+			text-align: center;
+		}
+
+		&__link {
+			color: $main-black;
+			cursor: pointer;
+			font-family: $ff-main;
+			display: inline-block;
+			vertical-align: top;
+			padding: 20px 45px;
+			transition: .3s;
+			text-transform: capitalize;
+			
+			&:hover,
+			&--active {
+				color: #de2b24;
+				text-decoration: undercase;
+			}
+
+			@media (max-width: 992px) {
+				display: block;
+				border-bottom: 1px solid #333;
+				margin-top: 5px;
+				transform: scale(1.15) translateY(-30px);
+				opacity: 0;
+				transition: transform .5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity .6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+				padding: 20px 35px;
+				color: #fff;
+
+				@for $i from 1 through 7 {
+					&:nth-child(#{$i}) {
+						transition-delay: #{0.56 - ($i * 0.07)}s;
+					}
+				}
+
+				&:hover,
+				&--active {
+					color: #A1A1A1;
+				}
+			}
+		}
+
+		&__name {
+			@media (max-width: 992px) {
+				display: block;
+				position: relative;
+				color: #fff;
+				width: 100%;
+			}
+		}
+	}
+
+	&__opened {
+		@media (max-width: 992px) {
+			height: 100%;
+			background-color: #000;
+			transition: all 0.2s ease-in, background 0.2s ease-in;
+	    transition-delay: 0.25s;
+	    overflow: hidden;
+	    .header__burger {
+	    	transform: rotate(90deg);
+
+	    	#burger {
+	    		.bar {
+	    			transition: all .4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	    			transition-delay: .2s;
+	    			&.topBar {
+	    				transform: translateY(4px) rotate(45deg);
+	    			}
+	    			&.btmBar {
+	    				transform: translateY(3px) rotate(-45deg);
+	    			}
+	    		}
+	    	}
+	    }
+
+	    .nav {
+		    &__link {
+		    	transform: scale(1) translateY(0px);
+		    	opacity: 1;
+
+		      &__name {
+						display: block;
+						position: relative;
+						color: #fff;
+						line-height: 2.35;
+						width: 100%;
+		      }
+		    }
+	    }
 		}
 	}
 
@@ -19,34 +188,19 @@
 				padding: 15px 25px;
 				height: 79px;
 		}
-	}
 
-	.nav {
-		display: inline-block;
-		vertical-align: top;
-		padding: 10px;
-
-		&__link {
-			color: $main-black;
-			font-family: $ff-main;
-			display: inline-block;
-			vertical-align: top;
-			padding: 20px 30px;
-			transition: .3s;
-			text-transform: capitalize;
-			
-			&:hover,
-			&--active {
-				color: #de2b24;
-				text-decoration: undercase;
-			}
+		@media (max-width: 992px) {
+			display: none;
 		}
 	}
 
 	&__button {
-		padding: 10px;
-	}
+		padding: 10px 25px;
 
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
 
 	.button {
 		padding: 20px 25px;
@@ -54,6 +208,10 @@
 		@media (max-width: 1025px) {
 			padding: 10px 15px;
 			margin-top: 10px;
+		}
+
+		@media (max-width: 992px) {
+			margin-top: 0;
 		}
 	}
 }
