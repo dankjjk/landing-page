@@ -1,8 +1,13 @@
-﻿$(document).ready(function() {
-	var burger = document.querySelector('.header__burger'),
-			header = document.querySelector('.header__menu');
+﻿(function() {
+	// Add even listener for open form button
 
-	burger.onclick = function() {
-		header.classList.toggle('header__opened');
-	}
-});
+	var openFormButton = document.querySelector('.arrow-down');
+	
+	if (openFormButton) {
+		openFormButton.addEventListener('click', function(e) {
+			e.preventDefault();
+			form.open();
+		});
+	};
+	
+}());

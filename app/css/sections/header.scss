@@ -147,6 +147,8 @@
 			transition: all 0.2s ease-in, background 0.2s ease-in;
 	    transition-delay: 0.25s;
 	    overflow: hidden;
+	    position: fixed;
+	    
 	    .header__burger {
 	    	transform: rotate(90deg);
 

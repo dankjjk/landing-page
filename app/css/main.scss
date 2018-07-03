@@ -7,12 +7,7 @@
 @import "global/buttons.scss";
 @import "global/common.scss";
 @import "global/title.scss";
-
-.wrapper {
-	position: relative;
-	display: block;
-	overflow: hidden;
-}
+@import "global/wrapper.scss";
 
 @import "sections/header.scss";
 @import "sections/hero.scss";

@@ -1,12 +1,14 @@
 var gulp 		 	   = require('gulp'),
 		browserSync  = require('browser-sync').create(),
-		pug					 =	require('gulp-pug'),
+		pug					 = require('gulp-pug'),
 		sass 		 	   = require('gulp-sass'),
 		rimraf 			 = require('rimraf'),
-		rename			 =	require('gulp-rename'),
-		autoprefixer =	require('autoprefixer'),
-		sourcemaps	 =	require('gulp-sourcemaps'),
-		postcss			 =	require('gulp-postcss')
+		rename			 = require('gulp-rename'),
+		autoprefixer = require('autoprefixer'),
+		sourcemaps	 = require('gulp-sourcemaps'),
+		postcss			 = require('gulp-postcss'),
+		uglify			 = require('gulp-uglify'),
+		concat			 = require('gulp-concat');
 
 
 /* --------------- BrowserSync --------------- */
@@ -45,8 +47,24 @@ gulp.task('sass:compile', function () {
   	]))
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(rename('main.min.css'))
-    .pipe(sourcemaps.write('./'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css/'));
+});
+
+
+/* --------------- JS compile --------------- */
+
+gulp.task('js:compile', function() {
+	return gulp.src([
+			'app/js/navigation.js',
+			'app/js/form.js',
+			'app/js/main.js'
+		])
+		.pipe(sourcemaps.init())
+		.pipe(concat('main.min.js'))
+		.pipe(uglify())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('build/js'))
 });
 
 
@@ -73,13 +91,12 @@ gulp.task('copy:images', function() {
 });
 
 
-/* --------------- Copy js --------------- */
+/* --------------- Copy images --------------- */
 
 gulp.task('copy:js', function() {
-	return gulp.src('app/js/**/*.js')
+	return gulp.src('./app/js/libs/*.*')
 		.pipe(gulp.dest('build/js'));
 });
-
 
 /* --------------- Copy --------------- */
 
@@ -91,7 +108,7 @@ gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js'));
 gulp.task('watch', function () {
   gulp.watch('app/template/**/*.pug', gulp.series('templates:compile'));
   gulp.watch('app/css/**/*.scss', gulp.series('sass:compile'));
-  gulp.watch('app/js/**/*.js', gulp.series('copy:js'));
+  gulp.watch('app/js/**/*.js', gulp.series('js:compile'));
 });
 
 
@@ -99,7 +116,7 @@ gulp.task('watch', function () {
 
 gulp.task('default', gulp.series(
 	'clean',
-	gulp.parallel('templates:compile', 'sass:compile', 'copy'),
+	gulp.parallel('templates:compile', 'sass:compile', 'js:compile', 'copy'),
 	gulp.parallel('watch', 'server')
 	)
 );

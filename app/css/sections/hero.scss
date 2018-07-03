@@ -9,6 +9,10 @@
 		font-family: $ff-main-bold;
 		font-size: 3rem;
 		line-height: 1;
+
+		@media (max-width: 576px) {
+			font-size: 2rem;
+		}
 	}
 
 	&__title {
@@ -16,6 +20,10 @@
 		margin-bottom: 27px;
 		font-size: 1.8rem;
 		font-family: $ff-main-light;
+
+		@media (max-width: 576px) {
+			font-size: 1.3rem;
+		}
 	}
 
 	.button--text-uppercase {
@@ -24,5 +32,9 @@
 		font-size: 1rem;
 		font-family: $ff-main;
 		letter-spacing: 1.2px;
+
+		@media (max-width: 576px) {
+			padding: 16px 36px;
+		}
 	}
 }
