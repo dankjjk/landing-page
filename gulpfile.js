@@ -91,7 +91,7 @@ gulp.task('copy:images', function() {
 });
 
 
-/* --------------- Copy images --------------- */
+/* --------------- Copy js --------------- */
 
 gulp.task('copy:js', function() {
 	return gulp.src('./app/js/libs/*.*')
