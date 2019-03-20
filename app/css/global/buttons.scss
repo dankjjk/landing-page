@@ -1,0 +1,21 @@
+.button {
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px 25px;
+	border-radius: 3px;
+	color: #fff;
+
+	&__red {
+		background: #de2b24;
+		transition: .3s;
+
+		&:hover {
+			background: lighten(#de2b24, 7%);
+		}
+	}
+
+	&__yellow {
+		background: #D7C823;
+		transition: .3s;
+	}
+}

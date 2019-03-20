@@ -6,10 +6,13 @@
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "browser-sync": "^2.23.6",
+    "fast-grid": "^0.2.3",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp.spritesmith": "^6.9.0",
     "rimraf": "^2.6.2"
   },
@@ -19,7 +22,11 @@
   "author": "Alexander",
   "license": "ISC",
   "dependencies": {
-    "gulp-update": "0.0.2"
+    "font-awesome": "^4.7.0",
+    "gulp-update": "0.0.2",
+    "jquery": "^3.3.1",
+    "normalize.scss": "^0.1.0",
+    "swiper": "^4.2.2"
   },
   "repository": {
     "type": "git",

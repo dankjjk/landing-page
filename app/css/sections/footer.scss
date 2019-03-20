@@ -1,0 +1,46 @@
+.footer {
+	border-top: 1px solid silver;
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-content: center;
+
+		.logo img {
+			cursor: pointer;
+			height: 70px;
+		}
+
+		&__nav {
+			display: inline-block;
+			vertical-align: top;
+			padding: 10px;
+		}
+
+		.nav {
+			padding: 10px;
+			a {
+				color: $main-black;
+				display: inline-block;
+				padding: 15px;
+				transition: .3s;
+
+				&:hover {
+					color: #2E8AE0;
+				}
+			}
+		}
+
+		input {
+			cursor: pointer;
+			border: 1px solid silver;
+			height: 40px;
+			padding: 5px 15px;
+			margin-top: 10px;
+
+			&:hover {
+				border-color: #2E8AE0;
+			}
+		}
+	}
+}

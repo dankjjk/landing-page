@@ -1,11 +1,13 @@
-var gulp 		 	  = require('gulp'),
-		browserSync = require('browser-sync').create(),
-		pug					=	require('gulp-pug'),
-		sass 		 	  = require('gulp-sass'),
-		spritesmith = require('gulp.spritesmith'),
-		rimraf 			= require('rimraf'),
-		rename			=	require('gulp-rename'),
-		prefixer		=	require('autoprefixer');
+var gulp 		 	   = require('gulp'),
+		browserSync  = require('browser-sync').create(),
+		pug					 =	require('gulp-pug'),
+		sass 		 	   = require('gulp-sass'),
+		spritesmith  = require('gulp.spritesmith'),
+		rimraf 			 = require('rimraf'),
+		rename			 =	require('gulp-rename'),
+		autoprefixer =	require('autoprefixer'),
+		sourcemaps	 =	require('gulp-sourcemaps'),
+		postcss			 =	require('gulp-postcss')
 
 
 /* --------------- BrowserSync --------------- */
@@ -25,7 +27,7 @@ gulp.task('server', function() {
 /* --------------- Pug compile --------------- */
 
 gulp.task('templates:compile', function buildHTML() {
-  return gulp.src('app/template/*.pug')
+  return gulp.src('app/template/**/*.pug')
   .pipe(pug({
     pretty: true
   }))
@@ -36,12 +38,17 @@ gulp.task('templates:compile', function buildHTML() {
 /* --------------- Sass compile --------------- */
 
 gulp.task('sass:compile', function () {
-  return gulp.src('app/css/style.scss')
+  return gulp.src('app/css/main.scss')
+  	.pipe(sourcemaps.init())
+  	.pipe(postcss([ autoprefixer({
+  		browsers: ['last 10 versions'],
+  		cascade: false }) 
+  	]))
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('./build/css'));
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build/css/'));
 });
-
 
 /* --------------- Sprite --------------- */
 
@@ -80,10 +87,21 @@ gulp.task('copy:images', function() {
 		.pipe(gulp.dest('build/img'));
 });
 
+gulp.task('copy:js', function() {
+	return gulp.src('app/js/**/*.js')
+		.pipe(gulp.dest('build/js'));
+});
+
+/* --------------- Copy images --------------- */
+
+gulp.task('copy:css', function() {
+	return gulp.src('app/css/swiper.min.css')
+		.pipe(gulp.dest('build/css'))
+})
 
 /* --------------- Copy --------------- */
 
-gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
+gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js', 'copy:css'));
 
 
 /* --------------- Watchers --------------- */
